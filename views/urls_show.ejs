@@ -5,19 +5,19 @@
 </head>
 <body class="container">
 
-  <header>
-    <% include ../partials/_header %>
-  </header>
-
   <main>
     <div class="jumbotron">
-
-      <p><%= shortURL %>: <%= longURL %></p>
-      <form action="/urls/<%=shortURL%>/update" method="POST" style="margin:150px;">
-        <label for="longURL">Enter a URL:</label>
-        <input id="longURL" type="text" name="URL" placeholder="http://" style="width: 300px">
-        <input type="submit" value="Submit">
-      </form>
+      <div class="text-center">
+        <h1><small>tiny</small>App</h1>
+        <p><%= shortURL %>: <%= longURL %></p>
+        </div>
+        <div class="edit">
+        <form action="/urls/<%=shortURL%>/update" method="POST" style="margin:150px;">
+          <label for="longURL">Enter a URL:</label>
+          <input id="longURL" type="text" name="URL" placeholder="http://" style="width: 300px">
+          <input type="submit" value="Submit">
+        </div>
+        </form>
     </div>
   </main>
 
