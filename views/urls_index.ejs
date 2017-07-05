@@ -6,23 +6,33 @@
 <body class="container">
 
   <header>
-    <% include ../partials/_header %>
   </header>
 
   <main>
     <div class="jumbotron">
-      <h1>Welcome TinyApp</h1>
-      <ul>
-      <% for(url in urls) { %>
-      <form method="POST" action="/urls/<%=url%>/delete">
-        <li><%= url %>: <%= urls[url] %> <input type="submit" value="Delete"></li>
-      </form>
-      <% } %>
-      </ul>
+      <h1 class="text-center"><small>Tiny</small>App</h1>
+      <div class="box">
+        <table>
+          <tr>
+            <th class="one">shortURL</th>
+            <th class="two">longURL</th>
+            <th class="three">Edit</th>
+            <th class="four">Delete</th>
+          </tr>
+          <% for(url in urls) { %>
+          <tr>
+            <th class="one"><%= url %>:</th>
+            <th class="two"><%= urls[url] %></th>
+            <th class="three"><a href="<%=`/urls/${url}`%>"><button class="btn"><i class="fa fa-pencil-square-o"></i></button></a></th>
+            <th class="four"><form method="POST" action="/urls/<%=url%>/delete"><button class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i></button></form></th>
+          </tr>
+          <% } %>
+        </table>
+      </div>
     </div>
   </main>
 
-  <footer>
+  <footer class="foot">
     <% include ../partials/_footer %>
   </footer>
 

@@ -43,10 +43,15 @@ app.post('/urls/:id/delete', (req, res) => {
   let url = urlDatabase[req.params.id];
   if (url) {
     delete urlDatabase[req.params.id];
-    res.redirect('/urls')
+    res.redirect('/urls');
   } else {
     res.send('The URL you are trying to reach does not exist');
   }
+});
+
+app.post('/urls/:id/update', (req, res) => {
+  urlDatabase[req.params.id] = [req.body.URL];
+  res.redirect('/urls');
 });
 
 app.get('/u/:shortURL', (req, res) => {
