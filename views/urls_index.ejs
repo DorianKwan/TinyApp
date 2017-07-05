@@ -14,7 +14,9 @@
       <h1>Welcome TinyApp</h1>
       <ul>
       <% for(url in urls) { %>
-        <li><%= url %>: <%= urls[url] %></li>
+      <form method="POST" action="/urls/<%=url%>/delete">
+        <li><%= url %>: <%= urls[url] %> <input type="submit" value="Delete"></li>
+      </form>
       <% } %>
       </ul>
     </div>
