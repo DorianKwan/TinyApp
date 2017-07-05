@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/_head %>
+</head>
+<body class="container">
+
+  <header>
+    <% include ../partials/_header %>
+  </header>
+
+  <main>
+    <div class="jumbotron">
+      <h1>Welcome TinyApp</h1>
+      <ul>
+      <% for(url in urls) { %>
+        <li><%= url %>: <%= urls[url] %></li>
+      <% } %>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <% include ../partials/_footer %>
+  </footer>
+
+</body>
+</html>
