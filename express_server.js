@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 8080;
+const cookieParser = require('cookie-parser');
 'use strict';
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser());
 
 var urlDatabase = {
   "b2xVn2": "http://www.lighthouselabs.ca",
@@ -13,7 +15,11 @@ var urlDatabase = {
 };
 
 app.get('/urls', (req, res) => {
-  res.render('urls_index', { urls: urlDatabase });
+  let templateVars = {
+    username: req.cookies["username"],
+    urls: urlDatabase
+  };
+  res.render('urls_index', templateVars);
 });
 
 app.get('/urls/new', (req, res) => {
@@ -28,6 +34,20 @@ app.get('/urls/:id', (req, res) => {
   };
   res.render('urls_show', templateVars);
 });
+
+app.post('/login', (req, res) => {
+  if (req.body.username) {
+    res.cookie('username', req.body.username);
+    res.redirect('/urls');
+  } else {
+    res.render('no_username.ejs');
+  }
+});
+
+app.post('/logout', (req, res) => {
+  res.clearCookie('username');
+  res.redirect('/urls');
+})
 
 app.post('/urls', (req, res) => {
   let shortURL = generateRandomString();

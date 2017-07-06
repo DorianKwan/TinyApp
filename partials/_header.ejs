@@ -3,9 +3,25 @@
 
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-        <span class="glyphicon glyphicon-tree-deciduous"</span>
-          TinyApp Project
+        <small>Tiny</small><b>App</b>
       </a>
+      <% if (username) { %>
+               <div class="loggedIn">
+                 <h5>Welcome to <span class="logo"><small>tiny</small>App</span>, <%=username%></h5>
+               </div>
+               <form method="POST" action="/logout">
+                 <div class="username">
+                   <button type="submit" class="btn">Logout</button>
+                 </div>
+                <% } else { %>
+          <form method="POST" action="/login">
+            <div class="username">
+              <label for="longURL">Username:</label>
+              <input type="text" name="username" placeholder='Name here' style="width: 300px; border-radius: 5px;">
+              <input type="submit" value="Login" style="border-radius: 5px;">
+            </div>
+          </form>
+                <% } %>
     </div>
 
   </div>
