@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><% include ../partials/_head %></head>
+<head>
+  <% include partials/_head %>
+</head>
+<body class="container">
 
-  <body style="font-size:20px; padding:50px;">
-    <form action="/urls" method="POST" style="margin:150px;">
-      <label for="longURL">Enter a URL:</label>
-      <input id="longURL" type="text" name="longURL" placeholder="http://" style="width: 300px">
-      <input type="submit" value="Submit">
-    </form>
-  </body>
-  
+  <main>
+    <div class="jumbotron">
+      <div class="text-center">
+        <h1><small>tiny</small>App</h1>
+        </div>
+        <div class="box">
+          <table>
+            <form action="/urls" method="POST" style="margin:150px;">
+              <tr class="column-title">
+                <th style="width: 25%;"><label for="password">New URL:</label></th>
+                <th style="width: 30%;"><input type="text" name="longURL" placeholder="http://" style="width: 300px"></th>
+                <th style="width: 25%;"><button class = "btn btn-default" type="submit">Shorten</button></th>
+              </tr>
+            </form>
+        </table>
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <% include partials/_footer %>
+  </footer>
+
+</body>
 </html>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><% include ../partials/_head %></head>
+  <head><% include partials/_head %></head>
   <header></header>
 
   <body style="font-size:20px; padding:50px;">
   <div class="jumbotron" style="width: 50%;">
     <h1 class="text-center"><small>Tiny</small>App</h1>
     <div class="box" style="width: 85%; margin: auto;">
+      <h3 style="margin: -5px 0px 0px 25px; padding: 10px 0px 20px 0px; color: black;">You must login to access <small>tiny</small>App!</h3>
       <table>
           <tr class="column-title">
             <form method="POST" action="/login">
@@ -19,6 +20,11 @@
             <th style="width: 25%;"><button class = "btn btn-default" type="submit">Login</button></th>
           </tr>
         </form>
+          <tr>
+            <th style="width: 25%">Register here:</th>
+            <th style="width: 30%"></th>
+            <th style="width: 25%"><a href="/register"><button class = "btn btn-default">Register</button></a></th>
+          </tr>
       </table>
   </body>
 

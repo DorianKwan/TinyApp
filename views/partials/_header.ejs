@@ -7,9 +7,9 @@
         <tr>
           <% if (user_name) { %>
           <form method="POST" action="/logout">
-            <th style="padding-top: 9px;"><a href="/logout"><button class="btn btn-default" type="submit">Logout</button></a></th>
+            <th style="padding-top: 9px;"><a href="/logout"><button class="btn btn-default" type="submit">Logout</button></a></th></form>
+            <th style="padding-top: 9px;"><a href="/urls/new"><button class="btn btn-default" type="submit">Add Link</button></a></th>
             <th style="padding: 13px 0px 0px 10px; width: 80%;">Welcome <%=user_name%>!</th>
-          </form>
           <% } else { %>
             <th style="padding-top: 9px;"><a href="/login"><button class="btn btn-default" type="submit">Login</button></a></th>
             <th style="padding-top: 9px;"><a href="/register"><button class="btn btn-default">Register</button></a></th>

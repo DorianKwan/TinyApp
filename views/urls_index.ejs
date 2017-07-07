@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <% include ../partials/_head %>
+  <% include partials/_head %>
 </head>
 
 <header class="container-fluid">
-  <% include ../partials/_header %>
+  <% include partials/_header %>
 </header>
 <body class="container">
 
@@ -23,9 +23,9 @@
             <th class="three">Edit</th>
             <th class="four">Delete</th>
           </tr>
-          <% for(url in urls) { %>
+          <% for(let url in urls) { %>
           <tr>
-            <th class="one"><%= url %>:</th>
+            <th class="one">http://localhost:8080/u/<%= url %></th>
             <th class="two"><%= urls[url] %></th>
             <th class="three"><a href="<%=`/urls/${url}`%>"><button class="btn"><i class="fa fa-pencil-square-o"></i></button></a></th>
             <th class="four"><form method="POST" action="/urls/<%=url%>/delete"><button class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i></button></form></th>
@@ -37,7 +37,7 @@
   </main>
 
   <footer class="foot">
-    <% include ../partials/_footer %>
+    <% include partials/_footer %>
   </footer>
 
 </body>

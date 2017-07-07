@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <% include ../partials/_head %>
+  <% include partials/_head %>
 </head>
 <body class="container">
 
@@ -11,18 +11,22 @@
         <h1><small>tiny</small>App</h1>
         <p><%= shortURL %>: <%= longURL %></p>
         </div>
-        <div class="edit">
-          <form action="/urls/<%=shortURL%>/update" method="POST" style="margin:150px;">
-            <label for="longURL">Enter a URL:</label>
-            <input id="longURL" type="text" name="URL" placeholder="http://" style="width: 300px">
-            <input type="submit" value="Submit">
-          </form>
+        <div class="box">
+          <table>
+            <form action="/urls/<%=shortURL%>/update" method="POST" style="margin:150px;">
+              <tr class="column-title">
+                <th style="width: 25%;"><label for="password">Edit URL:</label></th>
+                <th style="width: 30%;"><input type="text" name="URL" placeholder="http://" style="width: 300px"></th>
+                <th style="width: 25%;"><button class = "btn btn-default" type="submit">Edit</button></th>
+              </tr>
+            </form>
+        </table>
         </div>
     </div>
   </main>
 
   <footer>
-    <% include ../partials/_footer %>
+    <% include partials/_footer %>
   </footer>
 
 </body>
