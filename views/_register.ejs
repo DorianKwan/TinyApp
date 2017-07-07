@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><% include ../partials/_head %></head>
+  <header></header>
+
+  <body style="font-size:20px; padding:50px;">
+  <div class="jumbotron" style="width: 50%;">
+    <h1 class="text-center"><small>Tiny</small>App</h1>
+    <div class="box" style="width: 85%; margin: auto;">
+      <table>
+        <form action="/register" method="POST" style="margin:150px;">
+        <tr class="column-title">
+          <th style="width: 25%;"><label for="name">Enter Given Name:</label></th>
+          <th style="width: 30%;"><input type="text" name="name" placeholder="Name" style="width: 300px"></th>
+        </tr>
+        <tr class="column-title">
+          <th style="width: 25%;"><label for="username">Enter Username:</label></th>
+          <th style="width: 30%;"><input type="email" name="email" placeholder="Email" style="width: 300px"></th>
+        </tr>
+        <tr class="column-title">
+          <th style="width: 25%;"><label for="password">Enter Password:</label></th>
+          <th style="width: 30%;"><input type="password" name="password" placeholder="Password" style="width: 300px"></th>
+          <th style="width: 25%;"><button class = "btn btn-default" type="submit">Register</button></th>
+        </form>
+        </tr>
+  </body>
+
+</html>

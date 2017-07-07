@@ -1,28 +1,21 @@
-<nav class="navbar navbar-default" role"navigation">
-  <div class="container-fluid">
-
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <small>Tiny</small><b>App</b>
-      </a>
-      <% if (username) { %>
-               <div class="loggedIn">
-                 <h5>Welcome to <span class="logo"><small>tiny</small>App</span>, <%=username%></h5>
-               </div>
-               <form method="POST" action="/logout">
-                 <div class="username">
-                   <button type="submit" class="btn">Logout</button>
-                 </div>
-                <% } else { %>
-          <form method="POST" action="/login">
-            <div class="username">
-              <label for="longURL">Username:</label>
-              <input type="text" name="username" placeholder='Name here' style="width: 300px; border-radius: 5px;">
-              <input type="submit" value="Login" style="border-radius: 5px;">
-            </div>
+<nav class="navbar navbar-default container-fluid" role"navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">
+      <small>Tiny</small><b>App</b>
+    </a>
+    <table class="text-center">
+        <tr>
+          <% if (user_name) { %>
+          <form method="POST" action="/logout">
+            <th style="padding-top: 9px;"><a href="/logout"><button class="btn btn-default" type="submit">Logout</button></a></th>
+            <th style="padding: 13px 0px 0px 10px; width: 80%;">Welcome <%=user_name%>!</th>
           </form>
-                <% } %>
-    </div>
-
+          <% } else { %>
+            <th style="padding-top: 9px;"><a href="/login"><button class="btn btn-default" type="submit">Login</button></a></th>
+            <th style="padding-top: 9px;"><a href="/register"><button class="btn btn-default">Register</button></a></th>
+            <th style="padding: 13px 0px 0px 0px; width: 80%;">Here to shorten all URLs!</th>
+          <% } %>
+      </tr>
+    </table>
   </div>
 </nav>
