@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <% include partials/_head %>
-</head>
+<head><% include partials/_head %></head>
 
-<header class="container-fluid">
-  <% include partials/_header %>
-</header>
+<header><% include partials/_header %></header>
+
 <body class="container">
-
-  <header>
-  </header>
-
   <main>
     <div class="jumbotron">
       <h1 class="text-center"><small>Tiny</small>App</h1>
       <div class="box">
-        <table>
+        <table class="tablefont">
           <tr class="column-title">
-            <th class="one">shortURL</th>
-            <th class="two">longURL</th>
-            <th class="three">Edit</th>
-            <th class="four">Delete</th>
+            <th class="rowone" style="font-size: 1.2em">shortURL</th>
+            <th class="rowtwo" style="font-size: 1.2em">longURL</th>
+            <th class="rowthree" style="font-size: 1.2em">Edit</th>
+            <th class="rowfour" style="font-size: 1.2em">Delete</th>
           </tr>
           <% for(let url in urls) { %>
           <tr>
-            <th class="one">http://localhost:8080/u/<%= url %></th>
-            <th class="two"><%= urls[url] %></th>
-            <th class="three"><a href="<%=`/urls/${url}`%>"><button class="btn"><i class="fa fa-pencil-square-o"></i></button></a></th>
-            <th class="four"><form method="POST" action="/urls/<%=url%>/delete"><button class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i></button></form></th>
+            <th class="rowone">http://localhost:8080/u/<a href="http://localhost:8080/u/<%=url%>" target="_blank"><%= url %></a></th>
+            <th class="rowtwo"><%= urls[url] %></th>
+            <th class="rowthree"><a href="<%=`/urls/${url}`%>"><button class="btn"><i class="fa fa-pencil-square-o"></i></button></a></th>
+            <th class="rowfour"><form method="POST" action="/urls/<%=url%>/delete"><button class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i></button></form></th>
           </tr>
           <% } %>
         </table>
@@ -36,9 +29,7 @@
     </div>
   </main>
 
-  <footer class="foot">
-    <% include partials/_footer %>
-  </footer>
+  <footer class="foot"><% include partials/_footer %></footer>
 
 </body>
 </html>

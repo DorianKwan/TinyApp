@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <% include partials/_head %>
-</head>
-<body class="container">
+<head><% include partials/_head %></head>
 
+<header><% include partials/_header %></header>
+
+<body class="container">
   <main>
     <div class="jumbotron">
       <div class="text-center">
         <h1><small>tiny</small>App</h1>
         <p><%= shortURL %>: <%= longURL %></p>
-        </div>
+      </div>
         <div class="box">
           <table>
-            <form action="/urls/<%=shortURL%>/update" method="POST" style="margin:150px;">
-              <tr class="column-title">
-                <th style="width: 25%;"><label for="password">Edit URL:</label></th>
+            <form action="/urls/<%=shortURL%>" method="POST" style="margin:150px;">
+              <tr class="tablefont">
+                <th style="width: 25%; padding-top: 5px;"><label>Edit URL:</label></th>
                 <th style="width: 30%;"><input type="text" name="URL" placeholder="http://" style="width: 300px"></th>
                 <th style="width: 25%;"><button class = "btn btn-default" type="submit">Edit</button></th>
               </tr>
             </form>
         </table>
-        </div>
+      </div>
     </div>
   </main>
 
-  <footer>
-    <% include partials/_footer %>
-  </footer>
+  <footer><% include partials/_footer %></footer>
 
 </body>
 </html>
